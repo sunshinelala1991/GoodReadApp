@@ -1,0 +1,20 @@
+﻿@model  MyBookingApp.Models.Book
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Book Details: @Model.Title</h2>
+<ul>
+    <li>Genre: @Model.Genre</li>
+    
+    <li>Author:<a href="/authors/details/@Model.Author.Id"> @Model.Author.Name</a></li>
+    <li>Written in: @Model.Year</li>
+    <li>Price: @Model.Price</li>
+
+
+
+
+
+</ul>
+

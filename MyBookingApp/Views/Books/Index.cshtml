@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Here is a list of all our books</h2>
+<body data-ng-app="APIModule">
+    <div  ng-controller="APIController">
+
+        <button type="button" class="btn btn-primary" ng-click="goToCreatePage()">Create a new book</button>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Operation</th>
+            </tr>
+            <tbody data-ng-repeat="b in books">
+                <tr>
+                    <td>{{b.id}}</td>
+                    <td ><a href="/books/detail/{{b.id}}">{{b.title}}</a></td>
+                    <td><a href="/authors/details/{{b.authorId}}">{{b.authorName}}</td>
+                    <td> 
+                        <button type="button" class="btn btn-primary" ng-click="goToEditPage(b.id)">Edit</button>
+                        <button type="button" class="btn btn-primary" ng-click="deleteBook(b.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/APIScripts/Module.js"></script>
+<script src="~/Scripts/APIScripts/Controller.js"></script>  

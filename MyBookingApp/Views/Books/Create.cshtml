@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a new book</h2>
+<body data-ng-app="APIModule">
+    <div ng-controller="APIController">
+        <form id="newBook">
+            <div class="form-group">
+                <label>Book Name</label>
+                <div >
+                    <input id="bookName" name="bookName" type="text" value="" class="form-control" ng-model="formData.title"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Book Author</label>
+                <div class="tt-author">
+                    <input id="bookAuthor" name="bookAuthor" type="text" value="" class="form-control typeahead" ng-model="formData.authorName"/>
+                </div>
+            </div>
+
+            <input type="hidden" ng-model="formData.AuthorId" />
+
+            <div class="form-group">
+                <label>Written in</label>
+                <div >
+                    <input id="bookYear" name="bookYear" type="text" value="" class="form-control" ng-model="formData.year"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <div >
+                    <input id="bookPrice" name="bookPrice" type="text" value="" class="form-control" ng-model="formData.price" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Genre</label>
+                <div>
+                    <input id="bookGenre" name="bookGenre" type="text" value="" class="form-control" ng-model="formData.genre" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" ng-click="createNewBook()">Submit</button>
+        </form>
+
+        </div>
+    </body>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jquery")
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/APIScripts/Module.js"></script>
+<script src="~/Scripts/APIScripts/Controller.js"></script>  
+
+}
